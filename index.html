@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="hearts-container"></div> <div class="container">
+    <div id="hearts-container"></div> 
+    
+    <div class="container">
         <div class="step active" id="step-1">
             <h2>📅 Коли почалися наші стосунки?</h2>
             <div class="options">
@@ -30,15 +32,15 @@
             <h2>📺 Наш перший серіал?</h2>
             <div class="grid">
                 <div class="card" onmouseenter="playSound('dexter.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/m9cnI0YIzh67Uof9O99S9zXmXpP.jpg" alt="Dexter">
+                    <img src="https://uakino.best/uploads/mini/serial/44/ccbe14f67bf56c44afc10587e05a24.jpg" alt="Dexter">
                     <p>Декстер</p>
                 </div>
                 <div class="card" onmouseenter="playSound('breaking_bad.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/gg9p6m9Y9S859X2FfFm9S6f80N9.jpg" alt="Breaking Bad">
-                    <p>Breaking Bad</p>
+                    <img src="https://uakino.best/uploads/mini/serial/7e/58c07975e7d6f58986ba26e8f2ba55.png" alt="Breaking Bad">
+                    <p>Пуститися берега</p>
                 </div>
                 <div class="card correct-card" onmouseenter="playSound('wednesday.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(3, 4)">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9PFonB9REmbiBroc676pIu6Zid0.jpg" alt="Wednesday">
+                    <img src="https://upload.wikimedia.org/wikipedia/uk/4/46/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D0%92%D0%B5%D0%BD%D0%B7%D0%B4%D1%96_2022.png" alt="Wednesday">
                     <p>Венздей</p>
                 </div>
             </div>
@@ -48,15 +50,15 @@
             <h2>🎬 Що ми дивились у кіно?</h2>
             <div class="grid">
                 <div class="card" onmouseenter="playSound('smiths.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6S6pInB7M9j8mYpXW2Uf198p22I.jpg" alt="Mr & Mrs Smith">
+                    <img src="https://upload.wikimedia.org/wikipedia/uk/a/a8/%D0%9C%D1%96%D1%81%D1%82%D0%B5%D1%80_%D1%96_%D0%BC%D1%96%D1%81%D1%96%D1%81_%D0%A1%D0%BC%D1%96%D1%82_%28%D1%84%D1%96%D0%BB%D1%8C%D0%BC%2C_2005%29.jpg" alt="Mr & Mrs Smith">
                     <p>Містер і місіс Сміт</p>
                 </div>
                 <div class="card correct-card" onmouseenter="playSound('oppenheimer.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(4, 5)">
-                    <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNTA2MzQyNWExZTMzXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Oppenheimer">
+                    <img src="https://upload.wikimedia.org/wikipedia/uk/9/9f/%D0%9E%D0%BF%D0%BF%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D0%BC%D0%B5%D1%80_%28%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%29.png" alt="Oppenheimer">
                     <p>Опенгеймер</p>
                 </div>
                 <div class="card" onmouseenter="playSound('top_gun.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZGQ0LThhMWUtM2U0NzFlZWRkY2IwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" alt="Top Gun">
+                    <img src="https://uakino.best/uploads/mini/poster/67/ea5c6fee9d3df3781b7f895ead09e9.jpg" alt="Top Gun">
                     <p>Топ Ган</p>
                 </div>
             </div>
@@ -66,7 +68,7 @@
             <h2>🎵 Наша пісня?</h2>
             <div class="grid">
                 <div class="card" onmouseenter="playSound('my_blood.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c8/Twenty_One_Pilots_-_Trench.png" alt="Trench">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Trench_Twenty_One_Pilots.png" alt="Trench">
                     <p>My Blood</p>
                 </div>
                 <div class="card correct-card" onmouseenter="playSound('die_for_you.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(5, 6)">
@@ -74,22 +76,18 @@
                     <p>Die For You</p>
                 </div>
                 <div class="card" onmouseenter="playSound('birds.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Billie_Eilish_-_Hit_Me_Hard_and_Soft.png" alt="Billie Eilish">
+                    <img src="https://uafon.net/uploads/posts/2024-11/1731326462_52358fb8e8bb6f11a5c05e70053b8867.jpg" alt="Billie Eilish">
                     <p>Birds of a Feather</p>
                 </div>
             </div>
         </div>
 
         <div class="step" id="step-6">
-            <div class="envelope-wrapper">
-                <div class="envelope">
-                    <div class="letter">
-                        <h2>Будеш моєю валентинкою? ❤️</h2>
-                        <div class="final-buttons">
-                            <button id="yesBtn" onclick="finish()">ТАК!</button>
-                            <button id="noBtn" onmouseover="moveButton()">НІ</button>
-                        </div>
-                    </div>
+            <div class="final-question-box">
+                <h2>Будеш моєю валентинкою? ❤️</h2>
+                <div class="final-buttons">
+                    <button id="yesBtn" onclick="finish()">ТАК!</button>
+                    <button id="noBtn" onmouseover="moveButton()">НІ</button>
                 </div>
             </div>
         </div>

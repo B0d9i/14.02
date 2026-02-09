@@ -50,11 +50,11 @@ function wrongCard(card) {
 
 function moveButton() {
     const btn = document.getElementById('noBtn');
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    btn.style.position = 'fixed';
-    btn.style.left = x + 'px';
-    btn.style.top = y + 'px';
+    // Встановлюємо обмеження: кнопка рухається лише в межах 150 пікселів від центру
+    const randomX = Math.random() * 200 - 100; 
+    const randomY = Math.random() * 200 - 100;
+    
+    btn.style.transform = `translate(${randomX}px, ${randomY}px)`;
 }
 
 function finish() {
