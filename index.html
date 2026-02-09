@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div id="hearts-container"></div> <div class="container">
         <div class="step active" id="step-1">
             <h2>📅 Коли почалися наші стосунки?</h2>
             <div class="options">
                 <button onclick="wrong(this)">12.14.2022</button>
-                <button class="correct" onclick="nextStep(1, 2)">14.12.2022</button>
+                <button class="correct" onclick="handleCorrect(1, 2)">14.12.2022</button>
                 <button onclick="wrong(this)">22.12.2014</button>
             </div>
         </div>
@@ -21,77 +21,83 @@
             <h2>💋 Де був наш перший поцілунок?</h2>
             <div class="options">
                 <button onclick="wrong(this)">407 ауд.</button>
-                <button class="correct" onclick="nextStep(2, 3)">Парк біля цирку</button>
+                <button class="correct" onclick="handleCorrect(2, 3)">Парк біля цирку</button>
                 <button onclick="wrong(this)">114 ауд.</button>
             </div>
         </div>
 
         <div class="step" id="step-3">
-    <h2>📺 Який наш перший серіал серіал?</h2>
-    <div class="grid">
-        <div class="card" onmouseenter="playSound('dexter.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/d/d2/Dexter_titles.jpg" alt="Dexter">
-            <p>Декстер</p>
+            <h2>📺 Наш перший серіал?</h2>
+            <div class="grid">
+                <div class="card" onmouseenter="playSound('dexter.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZjZkN2M5ODgtMjQ2OC00ZDY0LTgxYjItZmFmNmY1OTUxMzFjXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="Dexter">
+                    <p>Декстер</p>
+                </div>
+                <div class="card" onmouseenter="playSound('breaking_bad.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMjhiMzgxZTctNDc1Ni00OTIxLTlhMTUtZTAzNWQ4NjYyZTNlXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg" alt="Breaking Bad">
+                    <p>Breaking Bad</p>
+                </div>
+                <div class="card correct-card" onmouseenter="playSound('wednesday.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(3, 4)">
+                    <img src="https://m.media-amazon.com/images/M/MV5BM2ZmMjEyZmYtMmE2Mi00OTkwLWE1NzEtZTkxZmYyN2Y0MDBkXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Wednesday">
+                    <p>Венздей</p>
+                </div>
+            </div>
         </div>
-        <div class="card" onmouseenter="playSound('breaking_bad.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png" alt="Breaking Bad">
-            <p>Пуститися берега</p>
-        </div>
-        <div class="card correct-card" onmouseenter="playSound('wednesday.mp3')" onmouseleave="stopSound()" onclick="nextStep(3, 4)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/d/d4/Wednesday_Netflix_series_poster.png" alt="Wednesday">
-            <p>Венздей</p>
-        </div>
-    </div>
-</div>
 
-<div class="step" id="step-4">
-    <h2>🎬 Який фільм ми дивились у кіно?</h2>
-    <div class="grid">
-        <div class="card" onmouseenter="playSound('smiths.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/7/70/Mr_%26_Mrs_Smith_poster.jpg" alt="Mr. & Mrs. Smith">
-            <p>Містер і місіс Сміт</p>
+        <div class="step" id="step-4">
+            <h2>🎬 Що ми дивились у кіно?</h2>
+            <div class="grid">
+                <div class="card" onmouseenter="playSound('smiths.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_.jpg" alt="Mr & Mrs Smith">
+                    <p>Містер і місіс Сміт</p>
+                </div>
+                <div class="card correct-card" onmouseenter="playSound('oppenheimer.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(4, 5)">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNTA2MzQyNWExZTMzXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Oppenheimer">
+                    <p>Опенгеймер</p>
+                </div>
+                <div class="card" onmouseenter="playSound('top_gun.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                    <img src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZGQ0LThhMWUtM2U0NzFlZWRkY2IwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" alt="Top Gun">
+                    <p>Топ Ган</p>
+                </div>
+            </div>
         </div>
-        <div class="card correct-card" onmouseenter="playSound('oppenheimer.mp3')" onmouseleave="stopSound()" onclick="nextStep(4, 5)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg" alt="Oppenheimer">
-            <p>Опенгеймер</p>
-        </div>
-        <div class="card" onmouseenter="playSound('top_gun.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/1/19/Top_Gun_Maverick.jpg" alt="Top Gun">
-            <p>Топ Ган</p>
-        </div>
-    </div>
-</div>
 
-<div class="step" id="step-5">
-    <h2>🎵 Яка пісня асоціюється з нами?</h2>
-    <div class="grid">
-        <div class="card" onmouseenter="playSound('my_blood.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/c/c8/Twenty_One_Pilots_-_Trench.png" alt="Trench Album">
-            <p>My Blood</p>
+        <div class="step" id="step-5">
+            <h2>🎵 Наша пісня?</h2>
+            <div class="grid">
+                <div class="card" onmouseenter="playSound('my_blood.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c8/Twenty_One_Pilots_-_Trench.png" alt="Trench">
+                    <p>My Blood</p>
+                </div>
+                <div class="card correct-card" onmouseenter="playSound('die_for_you.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(5, 6)">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png" alt="Starboy">
+                    <p>Die For You</p>
+                </div>
+                <div class="card" onmouseenter="playSound('birds.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Billie_Eilish_-_Hit_Me_Hard_and_Soft.png" alt="Billie Eilish">
+                    <p>Birds of a Feather</p>
+                </div>
+            </div>
         </div>
-        <div class="card correct-card" onmouseenter="playSound('die_for_you.mp3')" onmouseleave="stopSound()" onclick="nextStep(5, 6)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png" alt="Starboy Album">
-            <p>Die For You</p>
-        </div>
-        <div class="card" onmouseenter="playSound('birds.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
-            <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Billie_Eilish_-_Hit_Me_Hard_and_Soft.png" alt="Billie Eilish Album">
-            <p>Birds of a Feather</p>
-        </div>
-    </div>
-</div>
 
         <div class="step" id="step-6">
-            <h2 id="final-title">❤️ Будеш моєю валентинкою?</h2>
-            <div class="final-buttons">
-                <button id="yesBtn" onclick="finish()">ТАК!</button>
-                <button id="noBtn" onmouseover="moveButton()">НІ</button>
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="letter">
+                        <h2>Будеш моєю валентинкою? ❤️</h2>
+                        <div class="final-buttons">
+                            <button id="yesBtn" onclick="finish()">ТАК!</button>
+                            <button id="noBtn" onmouseover="moveButton()">НІ</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="step" id="step-final">
             <h1 class="celebrate">ТИ МОЯ ВАЛЕНТИНКА! 😍</h1>
-            <p>Я тебе кохаю!</p>
-            <div class="heart">❤️</div>
+            <p>Я тебе дуже сильно кохаю!</p>
+            <div class="big-heart">❤️</div>
         </div>
     </div>
 
