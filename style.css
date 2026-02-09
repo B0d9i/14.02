@@ -4,17 +4,17 @@ body {
     background: #ffe3e3;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    overflow: hidden;
+    overflow-x: hidden; /* Дозволяємо вертикальний скрол на мобільних */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* Запобігає появі скролу через літаючі серця */
     position: relative; 
 }
 
 .container {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
     padding: 30px;
     border-radius: 25px;
     box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
@@ -22,9 +22,7 @@ body {
     max-width: 600px;
     width: 90%;
     z-index: 10;
-    /* Додаємо легку прозорість, щоб бачити фон */
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
+    margin: 20px auto;
 }
 
 .step { display: none; }
@@ -32,28 +30,65 @@ body {
 
 @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
 
-/* Сітка карток */
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
-.card { cursor: pointer; transition: 0.3s; padding: 10px; border-radius: 15px; border: 2px solid transparent; background: white; }
+/* Сітка карток - адаптивна */
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    margin-top: 20px; 
+}
+
+.card { 
+    cursor: pointer; 
+    transition: 0.3s; 
+    padding: 10px; 
+    border-radius: 15px; 
+    border: 2px solid transparent; 
+    background: white;
+    -webkit-tap-highlight-color: transparent; /* Прибираємо синє підсвічування на iOS */
+}
+
 .card:hover { transform: scale(1.05); background: #fff0f0; }
 
-/* --- ВИПРАВЛЕННЯ ВИСОТИ ФОТО --- */
 .card img { 
     width: 100%; 
     border-radius: 10px; 
-    /* Збільшено висоту для постерів */
     height: 220px; 
     object-fit: cover; 
 }
 
 /* Кнопки */
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 button {
     background: #ff69b4; color: white; border: none; padding: 12px 25px;
-    border-radius: 50px; font-weight: bold; cursor: pointer; margin: 10px; transition: 0.3s;
+    border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s;
+    font-size: 1rem;
 }
+
 button:hover { background: #ff1493; transform: translateY(-2px); }
 
-/* --- Анімація сердець ПРИ УСПІХУ (швидкі) --- */
+/* Адаптація для планшетів та телефонів */
+@media (max-width: 768px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+    .card img { height: 180px; }
+}
+
+@media (max-width: 480px) {
+    .container { width: 85%; padding: 20px; }
+    .grid { grid-template-columns: 1fr; } /* Елементи в стовпець */
+    .card img { height: 250px; }
+    h2 { font-size: 1.2rem; }
+    .options { flex-direction: column; align-items: center; }
+    button { width: 100%; max-width: 250px; }
+}
+
+/* Анімації сердець */
 .heart-particle {
     position: fixed; font-size: 24px; pointer-events: none;
     animation: fly 3s linear forwards; z-index: 100;
@@ -63,18 +98,10 @@ button:hover { background: #ff1493; transform: translateY(-2px); }
     to { transform: translateY(-100px) rotate(360deg); opacity: 0; }
 }
 
-/* --- НОВІ ФОНОВІ СЕРЦЯ (повільні) --- */
 .bg-heart {
-    position: fixed;
-    bottom: -10vh;
-    pointer-events: none;
-    z-index: -1; /* На задньому плані */
-    animation-name: bg-fly;
-    animation-timing-function: linear;
-    /* Використовуємо змінні для різноманітності */
-    opacity: var(--opacity);
-    font-size: var(--size);
-    animation-duration: var(--duration);
+    position: fixed; bottom: -10vh; pointer-events: none; z-index: -1;
+    animation-name: bg-fly; animation-timing-function: linear;
+    opacity: var(--opacity); font-size: var(--size); animation-duration: var(--duration);
 }
 
 @keyframes bg-fly {
@@ -82,11 +109,7 @@ button:hover { background: #ff1493; transform: translateY(-2px); }
     to { transform: translateY(-120vh) rotate(360deg); }
 }
 
-.big-heart { font-size: 100px; animation: pulse 1s infinite; }
+.big-heart { font-size: 80px; animation: pulse 1s infinite; }
 @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-.final-question-box h2 {
-    color: #ff1493;
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
+.final-question-box h2 { color: #ff1493; font-size: 1.8rem; margin-bottom: 20px; }

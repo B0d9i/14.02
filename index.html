@@ -2,7 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Романтичний Квест ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +11,7 @@
     
     <div class="container">
         <div class="step active" id="step-1">
-            <h2> Коли почалися наші стосунки?</h2>
+            <h2>Коли почалися наші стосунки?</h2>
             <div class="options">
                 <button onclick="wrong(this)">12.14.2022</button>
                 <button class="correct" onclick="handleCorrect(1, 2)">14.12.2022</button>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="step" id="step-2">
-            <h2> Де був наш перший поцілунок?</h2>
+            <h2>Де був наш перший поцілунок?</h2>
             <div class="options">
                 <button onclick="wrong(this)">407 ауд.</button>
                 <button class="correct" onclick="handleCorrect(2, 3)">Парк біля цирку</button>
@@ -29,17 +29,27 @@
         </div>
 
         <div class="step" id="step-3">
-            <h2> Наш перший серіал?</h2>
+            <h2>Наш перший серіал?</h2>
+            <p style="font-size: 0.8rem; color: #888;">(Затисни, щоб почути)</p>
             <div class="grid">
-                <div class="card" onmouseenter="playSound('dexter.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                <div class="card" 
+                     onmouseenter="playSound('dexter.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('dexter.mp3')" ontouchend="stopSound()"
+                     onclick="wrongCard(this)">
                     <img src="https://uakino.best/uploads/mini/serial/44/ccbe14f67bf56c44afc10587e05a24.jpg" alt="Dexter">
                     <p>Декстер</p>
                 </div>
-                <div class="card" onmouseenter="playSound('breaking_bad.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                <div class="card" 
+                     onmouseenter="playSound('breaking_bad.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('breaking_bad.mp3')" ontouchend="stopSound()"
+                     onclick="wrongCard(this)">
                     <img src="https://uakino.best/uploads/mini/serial/7e/58c07975e7d6f58986ba26e8f2ba55.png" alt="Breaking Bad">
-                    <p>Пуститися берега</p>
+                    <p>Breaking Bad</p>
                 </div>
-                <div class="card correct-card" onmouseenter="playSound('wednesday.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(3, 4)">
+                <div class="card correct-card" 
+                     onmouseenter="playSound('wednesday.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('wednesday.mp3')" ontouchend="stopSound()"
+                     onclick="handleCorrect(3, 4)">
                     <img src="https://upload.wikimedia.org/wikipedia/uk/4/46/%D0%9F%D0%BE%D1%81%D1%82%D0%B5%D1%80_%D0%92%D0%B5%D0%BD%D0%B7%D0%B4%D1%96_2022.png" alt="Wednesday">
                     <p>Венздей</p>
                 </div>
@@ -47,17 +57,26 @@
         </div>
 
         <div class="step" id="step-4">
-            <h2> Що ми дивились у кіно?</h2>
+            <h2>Що ми дивились у кіно?</h2>
             <div class="grid">
-                <div class="card" onmouseenter="playSound('smiths.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                <div class="card" 
+                     onmouseenter="playSound('smiths.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('smiths.mp3')" ontouchend="stopSound()"
+                     onclick="wrongCard(this)">
                     <img src="https://upload.wikimedia.org/wikipedia/uk/a/a8/%D0%9C%D1%96%D1%81%D1%82%D0%B5%D1%80_%D1%96_%D0%BC%D1%96%D1%81%D1%96%D1%81_%D0%A1%D0%BC%D1%96%D1%82_%28%D1%84%D1%96%D0%BB%D1%8C%D0%BC%2C_2005%29.jpg" alt="Mr & Mrs Smith">
                     <p>Містер і місіс Сміт</p>
                 </div>
-                <div class="card correct-card" onmouseenter="playSound('oppenheimer.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(4, 5)">
-                    <img src="https://upload.wikimedia.org/wikipedia/uk/9/9f/%D0%9E%D0%BF%D0%BF%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D0%BC%D0%B5%D1%80_%28%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%29.png" alt="Oppenheimer">
+                <div class="card correct-card" 
+                     onmouseenter="playSound('oppenheimer.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('oppenheimer.mp3')" ontouchend="stopSound()"
+                     onclick="handleCorrect(4, 5)">
+                    <img src="https://upload.wikimedia.org/wikipedia/uk/9/9f/%D0%9O%D0%BF%D0%BF%D0%B5%D0%BD%D0%B3%D0%B5%D0%B9%D0%BC%D0%B5%D1%80_%28%D0%BF%D0%BE%D1%81%D1%82%D0%B5%D1%80%29.png" alt="Oppenheimer">
                     <p>Опенгеймер</p>
                 </div>
-                <div class="card" onmouseenter="playSound('top_gun.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                <div class="card" 
+                     onmouseenter="playSound('top_gun.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('top_gun.mp3')" ontouchend="stopSound()"
+                     onclick="wrongCard(this)">
                     <img src="https://uakino.best/uploads/mini/poster/67/ea5c6fee9d3df3781b7f895ead09e9.jpg" alt="Top Gun">
                     <p>Топ Ган</p>
                 </div>
@@ -65,17 +84,26 @@
         </div>
 
         <div class="step" id="step-5">
-            <h2> Наша пісня?</h2>
+            <h2>Наша пісня?</h2>
             <div class="grid">
-                <div class="card" onmouseenter="playSound('my_blood.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                <div class="card" 
+                     onmouseenter="playSound('my_blood.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('my_blood.mp3')" ontouchend="stopSound()"
+                     onclick="wrongCard(this)">
                     <img src="https://upload.wikimedia.org/wikipedia/en/f/f3/Trench_Twenty_One_Pilots.png" alt="Trench">
                     <p>My Blood</p>
                 </div>
-                <div class="card correct-card" onmouseenter="playSound('die_for_you.mp3')" onmouseleave="stopSound()" onclick="handleCorrect(5, 6)">
+                <div class="card correct-card" 
+                     onmouseenter="playSound('die_for_you.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('die_for_you.mp3')" ontouchend="stopSound()"
+                     onclick="handleCorrect(5, 6)">
                     <img src="https://upload.wikimedia.org/wikipedia/en/3/39/The_Weeknd_-_Starboy.png" alt="Starboy">
                     <p>Die For You</p>
                 </div>
-                <div class="card" onmouseenter="playSound('birds.mp3')" onmouseleave="stopSound()" onclick="wrongCard(this)">
+                <div class="card" 
+                     onmouseenter="playSound('birds.mp3')" onmouseleave="stopSound()" 
+                     ontouchstart="playSound('birds.mp3')" ontouchend="stopSound()"
+                     onclick="wrongCard(this)">
                     <img src="https://uafon.net/uploads/posts/2024-11/1731326462_52358fb8e8bb6f11a5c05e70053b8867.jpg" alt="Billie Eilish">
                     <p>Birds of a Feather</p>
                 </div>
@@ -87,7 +115,7 @@
                 <h2>Будеш моєю валентинкою? ❤️</h2>
                 <div class="final-buttons">
                     <button id="yesBtn" onclick="finish()">ТАК!</button>
-                    <button id="noBtn" onmouseover="moveButton()">НІ</button>
+                    <button id="noBtn" onmouseover="moveButton()" ontouchstart="moveButton()">НІ</button>
                 </div>
             </div>
         </div>
