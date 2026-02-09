@@ -9,6 +9,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* Запобігає появі скролу через літаючі серця */
+    position: relative; 
 }
 
 .container {
@@ -20,6 +22,9 @@ body {
     max-width: 600px;
     width: 90%;
     z-index: 10;
+    /* Додаємо легку прозорість, щоб бачити фон */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
 }
 
 .step { display: none; }
@@ -29,9 +34,17 @@ body {
 
 /* Сітка карток */
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; }
-.card { cursor: pointer; transition: 0.3s; padding: 10px; border-radius: 15px; border: 2px solid transparent; }
+.card { cursor: pointer; transition: 0.3s; padding: 10px; border-radius: 15px; border: 2px solid transparent; background: white; }
 .card:hover { transform: scale(1.05); background: #fff0f0; }
-.card img { width: 100%; border-radius: 10px; height: 150px; object-fit: cover; }
+
+/* --- ВИПРАВЛЕННЯ ВИСОТИ ФОТО --- */
+.card img { 
+    width: 100%; 
+    border-radius: 10px; 
+    /* Збільшено висоту для постерів */
+    height: 220px; 
+    object-fit: cover; 
+}
 
 /* Кнопки */
 button {
@@ -40,7 +53,7 @@ button {
 }
 button:hover { background: #ff1493; transform: translateY(-2px); }
 
-/* Анімація сердець */
+/* --- Анімація сердець ПРИ УСПІХУ (швидкі) --- */
 .heart-particle {
     position: fixed; font-size: 24px; pointer-events: none;
     animation: fly 3s linear forwards; z-index: 100;
@@ -48,6 +61,25 @@ button:hover { background: #ff1493; transform: translateY(-2px); }
 @keyframes fly {
     from { transform: translateY(100vh) rotate(0deg); opacity: 1; }
     to { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* --- НОВІ ФОНОВІ СЕРЦЯ (повільні) --- */
+.bg-heart {
+    position: fixed;
+    bottom: -10vh;
+    pointer-events: none;
+    z-index: -1; /* На задньому плані */
+    animation-name: bg-fly;
+    animation-timing-function: linear;
+    /* Використовуємо змінні для різноманітності */
+    opacity: var(--opacity);
+    font-size: var(--size);
+    animation-duration: var(--duration);
+}
+
+@keyframes bg-fly {
+    from { transform: translateY(0) rotate(0deg); }
+    to { transform: translateY(-120vh) rotate(360deg); }
 }
 
 .big-heart { font-size: 100px; animation: pulse 1s infinite; }
